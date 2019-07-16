@@ -100,3 +100,30 @@ int main() {
 
 ## 3. 개선점
 
+1. 사실 코드의 가독성이 떨어지는 것은 사실. 아래의 코드처럼 함수로 작성하면 가독성이 올라간다!
+
+```C++
+#include <iostream>
+using namespace std;
+int nextNumber(int n) {
+    int p = n / 10;
+    int q = n % 10;
+    return 10*q + (p+q)%10;
+}
+int main() {
+    int N;
+    scanf("%d", &N);
+    int num = N;
+    int count = 0;
+    while(true) {
+        count++;
+        num = nextNumber(num);
+        if( num == N ) break;
+    }
+    printf("%d", count);
+}
+```
+
+[https://zetawiki.com/wiki/BOJ_1110_%EB%8D%94%ED%95%98%EA%B8%B0_%EC%82%AC%EC%9D%B4%ED%81%B4](https://zetawiki.com/wiki/BOJ_1110_더하기_사이클)
+
+2. 배열로 풀려고 했다가 이러한 방법은 비효율적임을 깨달았다. 알고리즘 문제를 풀 때 항상 배열로 풀어야겠다는 생각을 하는 듯 하다 ㅠㅠ 다른 방법이 많은데도 불구하고

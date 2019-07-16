@@ -58,7 +58,6 @@ A를 {1, 1, 0, 1, 6}과 같이 재배열하면 된다.
 
 ```C++
 #include <iostream>
-// using namespace std;
 
 int main() {
 	// 변수 선언
@@ -107,11 +106,60 @@ int main() {
     delete[]a;
     delete[]b;
 }
-
 ```
 
 
 
 ## 3. 개선점
 
-없다. 다들 비슷하게 푼 듯
+1. N의 범위가 50까지로 정해져 있기 때문에 동적할당을 하지 않고 일반 배열을 선언해도 될 것이다.
+   * 메모리 절약 vs 빠른 속도 https://algospot.com/forum/read/3833/
+     결론은 둘 다 상관 없다! new int를 쓰기 보다는 STL vector 등을 써봐야겠다.
+2. a는 오름차순 정렬, b는 내림차순 정렬을 해서 단순히 a[i]와 b[i]를 곱해도 된다.
+3. 정렬을 위한 함수는 **sort()** 함수
+   참고 : https://blockdmask.tistory.com/178
+
+
+
+서칭하다가 찾은 좋은 코드!!
+
+```c
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <functional>
+using namespace std;
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+
+	vector<int> a(n), b(n);
+
+	for (int i = 0; i < n; i++)
+		scanf("%d", &a[i]);
+
+	for (int i = 0; i < n; i++)
+		scanf("%d", &b[i]);
+
+	sort(a.begin(), a.end());
+	sort(b.begin(), b.end(), greater<int>());
+
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+		sum += a[i] * b[i];
+	printf("%d\n", sum);
+	return 0;
+}
+```
+
+출처: https://washiofsunpark.tistory.com/12 [NaiveLight의 필기 노트]
+
+
+
+하지만 이 코드에서 **#include \<cstdio>**가 어떤 헤더인지 몰라서 서칭을 해봤다 ㅠㅠ
+
+* [C++] \<cstdio>, \<iostream>, <stdio.h>에 대해서 https://su-m.tistory.com/4
+
+결론! 나는 아직 초보니까 \<cstdio>대신 \<iostream>을 써야겠다,,

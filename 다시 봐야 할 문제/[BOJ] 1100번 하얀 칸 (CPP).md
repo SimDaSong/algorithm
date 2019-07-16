@@ -62,7 +62,7 @@ int main() {
 		for (int j = 0; j < 8; j++) {
 			scanf("%1c", &chess[i][j]);
 		}
-		std::cin.ignore(); // char 입력 받ㅇ르 땐 비워 줘야 함
+		std::cin.ignore(); // char 입력 받을 땐 비워 줘야 함
 	}
 
 	// 수 세기
@@ -94,3 +94,7 @@ int main() {
 
 ## 3. 개선점
 
+1. 체스 판 이름으로 chess보다 *board*가 더 나을 듯
+2. 체스칸 입력 받을 때 굳이 이중 포문 사용하지 않고 *scanf("%s", chess[i]);*를 이용하면 된다 ㅠ,ㅠ
+   참고 https://github.com/blisstoner/BOJ/blob/master/1100.cpp
+3. F의 위치를 찾을 때 변수 이름을 단순히 i, j로 하지 말고 *row*, *col*로 하는 게 더 명확했을 것 같다!
