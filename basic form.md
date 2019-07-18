@@ -1,6 +1,6 @@
-# [BOJ] 2743번 단어 길이 재기 (CPP)
+# [BOJ] 2562번 최대값 (CPP)
 
-백준온라인저지(BOJ) https://www.acmicpc.net/problem/2743
+백준온라인저지(BOJ) https://www.acmicpc.net/problem/2562
 
 아이디: song98987
 
@@ -10,13 +10,7 @@
 
 
 
-
-
 ## 2. 내 소스 코드
-
-```C++
-
-```
 
 
 
