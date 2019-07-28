@@ -1,0 +1,82 @@
+# [BOJ] 10102번 개표 (CPP)
+
+백준온라인저지(BOJ) https://www.acmicpc.net/problem/10102
+
+아이디: song98987
+
+
+
+## 1. 문제 설명
+
+| 시간 제한 | 메모리 제한 | 제출 | 정답 | 맞은 사람 | 정답 비율 |
+| :-------- | :---------- | :--- | :--- | :-------- | :-------- |
+| 1 초      | 256 MB      | 2067 | 1396 | 1316      | 68.577%   |
+
+#### 문제
+
+A와 B가 한 오디션 프로의 결승전에 진출했다. 결승전의 승자는 심사위원의 투표로 결정된다.
+
+심사위원의 투표 결과가 주어졌을 때, 어떤 사람이 우승하는지 구하는 프로그램을 작성하시오.
+
+#### 입력
+
+입력은 총 두 줄로 이루어져 있다. 첫째 줄에는 심사위원의 수 V (1 ≤  V ≤  15)가 주어지고, 둘째 줄에는 각 심사위원이 누구에게 투표했는지가 주어진다. A와 B는 각각 그 참가자를 나타낸다.
+
+#### 출력
+
+- A가 받은 표가 B보다 많은 경우에는 A
+- B가 받은 표가 A보다 많은 경우에는 B
+- 같은 경우에는 Tie
+
+를 출력한다.
+
+
+
+#### 예제 입력 1
+
+```
+6
+ABBABB
+```
+
+#### 예제 출력 1
+
+```
+B
+```
+
+
+
+#### 출처
+
+[Olympiad ](https://www.acmicpc.net/category/2)> [Canadian Computing Competition & Olympiad ](https://www.acmicpc.net/category/173)> [2014 ](https://www.acmicpc.net/category/299)> [CCC 2014 Junior Division](https://www.acmicpc.net/category/detail/1261) 2번
+
+
+
+## 2. 내 소스 코드
+
+```C++
+#include <iostream>
+
+int main() {
+	int voter, a = 0, b = 0;
+	char vote;
+
+	scanf("%d", &voter);
+	getchar();
+
+	for (int i = 0; i < voter; i++) {
+		vote = getchar();
+		if (vote == 'A') a++;
+		else b++;
+	}
+
+	if (a == b) printf("Tie");
+	else a > b ? printf("A") : printf("B");
+}
+```
+
+
+
+## 3. 개선점
+
