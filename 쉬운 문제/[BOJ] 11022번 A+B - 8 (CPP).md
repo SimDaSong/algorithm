@@ -54,6 +54,7 @@ Case #5: 5 + 2 = 7
 ## 2. 내 소스 코드
 
 ```C++
+#include <iostream>
 
 int main() {
 	int t, a, b;

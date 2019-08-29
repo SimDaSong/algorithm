@@ -73,22 +73,26 @@ A × B × C = 150 × 266 × 427 = 17037300 이 되고,
 
 ```C++
 #include <iostream>
+#include <stdio.h> // sprintf 함수 사용 위해
 
 int main() {
 	int a, b, c;
-	unsigned long mult;
-	int count[10] = { 0 }; // 각 숫자가 몇 번 쓰였는가
+	char num[10] = { 0 }, mult[10];
 
 	scanf("%d %d %d", &a, &b, &c);
-	mult = a * b * c;
 
-	count[mult % 10 - 1]++; // 일의 자리
-	for (int i = 10;; i *= 10) {
-		count[mult / i - 1]++;
-		mult
+	sprintf(mult, "%d", a*b*c);
+
+	for (int i = 0; mult[i]; i++) {
+		num[mult[i] - '0']++;
 	}
+
+	for (int i = 0; i < 10; i++)
+		printf("%d\n", num[i]);
 }
 ```
+
+내가 spintf를 왜 쓴 걸까...
 
 
 
