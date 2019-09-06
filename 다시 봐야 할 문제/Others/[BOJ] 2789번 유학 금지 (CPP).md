@@ -76,3 +76,24 @@ int main() {
 
 ## 3. 개선점
 
+1. 이렇게 짜는 사람도 있더라
+
+   ```C++
+   #include<cstdio>
+   
+   char s[101], t[] = "CAMBRIDGE";
+   int l;
+   
+   
+   int main() {
+   	scanf("%s", &s);
+   	for (int i = 0; s[i]; i++) {
+   		for (int j = 0; t[j]; j++) if (s[i] == t[j]) s[i] = 0;
+   		if (s[i]) s[l++] = s[i];
+   	}
+   	s[l] = 0;
+   	printf("%s\n", s);
+   }
+   ```
+
+   https://www.acmicpc.net/source/14967776
