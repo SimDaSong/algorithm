@@ -76,9 +76,9 @@ int main() {
 }
 ```
 
-<img src="9527번(1).png">
+<img src="/images/9527번(1).png">
 
-<img src="9527번(2).png">
+<img src="/images/9527번(2).png">
 
 
 
