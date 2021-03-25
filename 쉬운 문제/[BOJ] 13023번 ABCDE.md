@@ -1,4 +1,4 @@
-# [BOJ] 2562번 최대값 (CPP)
+# [BOJ] 13023번 ABCDE (CPP)
 
 백준온라인저지(BOJ) https://www.acmicpc.net/problem/13023
 
